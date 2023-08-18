@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lister
+spec:
+  selector:
+    matchLabels:
+      app: lister
+  template:
+    metadata:
+      labels:
+        app: lister
+    spec:
+      containers:
+        - name: lister
+          image: mobarak9239/in-cluster-config:2
+          ports:
+            - containerPort: 8083
