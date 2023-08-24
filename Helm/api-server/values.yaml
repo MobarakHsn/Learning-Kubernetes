@@ -1,0 +1,16 @@
+containerSpec:
+  name: api-server
+  image: mobarak9239/api-server:latest
+  port: 8081
+
+service:
+  type: NodePort
+  port: 8081
+  nodePort: 30050
+  protocol: TCP
+
+replicaSpec:
+  replicas: 2
+  matchLabels:
+    app: api-server
+    cluster: kind
